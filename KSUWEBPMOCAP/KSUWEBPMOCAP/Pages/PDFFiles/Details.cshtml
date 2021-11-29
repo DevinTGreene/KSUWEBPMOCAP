@@ -1,0 +1,37 @@
+﻿@page
+@model KSUWEBPMOCAP.Pages.PDFFiles.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>PDFFILE</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PDFFILE.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PDFFILE.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PDFFILE.Type)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PDFFILE.Type)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PDFFILE.Data)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PDFFILE.Data)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.PDFFILE.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

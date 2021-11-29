@@ -1,0 +1,60 @@
+﻿@page
+@model KSUWEBPMOCAP.Pages.Assignments.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Assignment[0].Project_Num)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Assignment[0].Net_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Assignment[0].Student_Net_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Assignment[0].Faculty_LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Assignment[0].Student_LastName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Assignment) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Project_Num)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Net_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Student_Net_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Faculty_LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Student_LastName)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Assign_ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Assign_ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Assign_ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

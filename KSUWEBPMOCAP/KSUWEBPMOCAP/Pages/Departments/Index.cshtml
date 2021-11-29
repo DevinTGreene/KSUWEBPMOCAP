@@ -1,0 +1,48 @@
+﻿@page
+@model KSUWEBPMOCAP.Pages.Departments.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Deparments</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Department[0].Dept_Num)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Department[0].Dept_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Department[0].Faculty_LastName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Department) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dept_Num)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dept_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Faculty_LastName)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Dept_ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Dept_ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Dept_ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

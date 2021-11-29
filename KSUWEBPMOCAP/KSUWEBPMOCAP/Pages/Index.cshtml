@@ -1,0 +1,21 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <h1>PMO Login</h1>
+    <p1>Please select user type.</p1>
+    <form method="post" align="center" asp-page="Index">
+        <input type="submit" value="Faculty" asp-page-handler="Adminlgn" /><br /><br />
+        <input type="submit" value="Student" asp-page-handler="Userlgn" /><br /><br />
+        <input type="submit" value="Sponser" asp-page-handler="Viewerlgn" />
+    </form>
+</body>
+</html>

@@ -1,0 +1,62 @@
+﻿@page
+@model KSUWEBPMOCAP.Pages.Faculties.IndexModel
+@using Microsoft.AspNetCore.Http
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Faculty</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Faculty[0].Net_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Faculty[0].Faculty_LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Faculty[0].Faculty_FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Faculty[0].Faculty_Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Faculty[0].Dept_Name)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Faculty)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Net_ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Faculty_LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Faculty_FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Faculty_Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Dept_Name)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Faculty_ID">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.Faculty_ID">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.Faculty_ID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

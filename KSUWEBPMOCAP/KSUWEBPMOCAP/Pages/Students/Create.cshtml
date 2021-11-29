@@ -1,0 +1,49 @@
+﻿@page
+@model KSUWEBPMOCAP.Pages.Students.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Student</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Student.Student_Net_ID" class="control-label"></label>
+                <input asp-for="Student.Student_Net_ID" class="form-control" />
+                <span asp-validation-for="Student.Student_Net_ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Student.Student_LastName" class="control-label"></label>
+                <input asp-for="Student.Student_LastName" class="form-control" />
+                <span asp-validation-for="Student.Student_LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Student.Student_FirstdName" class="control-label"></label>
+                <input asp-for="Student.Student_FirstdName" class="form-control" />
+                <span asp-validation-for="Student.Student_FirstdName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Student.Student_Email" class="control-label"></label>
+                <input asp-for="Student.Student_Email" class="form-control" />
+                <span asp-validation-for="Student.Student_Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

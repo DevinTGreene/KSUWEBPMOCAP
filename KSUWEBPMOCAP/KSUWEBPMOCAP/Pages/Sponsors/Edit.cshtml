@@ -1,0 +1,65 @@
+﻿@page
+@model KSUWEBPMOCAP.Pages.Sponsors.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Sponsor</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Sponsor.Sponsor_ID" />
+            <div class="form-group">
+                <label asp-for="Sponsor.Sponsor_Name" class="control-label"></label>
+                <input asp-for="Sponsor.Sponsor_Name" class="form-control" />
+                <span asp-validation-for="Sponsor.Sponsor_Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sponsor.Sponsor_Title" class="control-label"></label>
+                <input asp-for="Sponsor.Sponsor_Title" class="form-control" />
+                <span asp-validation-for="Sponsor.Sponsor_Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sponsor.Sponsor_Org" class="control-label"></label>
+                <input asp-for="Sponsor.Sponsor_Org" class="form-control" />
+                <span asp-validation-for="Sponsor.Sponsor_Org" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sponsor.Sponsor_Email" class="control-label"></label>
+                <input asp-for="Sponsor.Sponsor_Email" class="form-control" />
+                <span asp-validation-for="Sponsor.Sponsor_Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sponsor.Sponsor_Phone" class="control-label"></label>
+                <input asp-for="Sponsor.Sponsor_Phone" class="form-control" />
+                <span asp-validation-for="Sponsor.Sponsor_Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sponsor.Sponsor_Address" class="control-label"></label>
+                <input asp-for="Sponsor.Sponsor_Address" class="form-control" />
+                <span asp-validation-for="Sponsor.Sponsor_Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sponsor.Sponsor_Website" class="control-label"></label>
+                <input asp-for="Sponsor.Sponsor_Website" class="form-control" />
+                <span asp-validation-for="Sponsor.Sponsor_Website" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

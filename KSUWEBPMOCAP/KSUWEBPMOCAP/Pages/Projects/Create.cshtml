@@ -1,0 +1,89 @@
+﻿@page
+@model KSUWEBPMOCAP.Pages.Projects.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Project</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Project.Project_Num" class="control-label"></label>
+                <input asp-for="Project.Project_Num" class="form-control" />
+                <span asp-validation-for="Project.Project_Num" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Project.Proj_Type" class="control-label"></label>
+                <input asp-for="Project.Proj_Type" class="form-control" />
+                <span asp-validation-for="Project.Proj_Type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Project.Num_Teams_Sponsored" class="control-label"></label>
+                <input asp-for="Project.Num_Teams_Sponsored" class="form-control" />
+                <span asp-validation-for="Project.Num_Teams_Sponsored" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Project.Project_Description" class="control-label"></label>
+                <input asp-for="Project.Project_Description" class="form-control" />
+                <span asp-validation-for="Project.Project_Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Project.Proj_Sponsor_Benefit" class="control-label"></label>
+                <input asp-for="Project.Proj_Sponsor_Benefit" class="form-control" />
+                <span asp-validation-for="Project.Proj_Sponsor_Benefit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Project.Proj_Student_Benefit" class="control-label"></label>
+                <input asp-for="Project.Proj_Student_Benefit" class="form-control" />
+                <span asp-validation-for="Project.Proj_Student_Benefit" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Project.Proj_hasNDA" /> @Html.DisplayNameFor(model => model.Project.Proj_hasNDA))
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Project.StartDate" class="control-label"></label>
+                <input asp-for="Project.StartDate" class="form-control" />
+                <span asp-validation-for="Project.StartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Project.EndDate" class="control-label"></label>
+                <input asp-for="Project.EndDate" class="form-control" />
+                <span asp-validation-for="Project.EndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Project.Sponsor_Name" class="control-label"></label>
+                <input asp-for="Project.Sponsor_Name" class="form-control" />
+                <span asp-validation-for="Project.Sponsor_Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Project.Faculty_LastName" class="control-label"></label>
+                <input asp-for="Project.Faculty_LastName" class="form-control" />
+                <span asp-validation-for="Project.Faculty_LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Project.Dept_Name" class="control-label"></label>
+                <input asp-for="Project.Dept_Name" class="form-control" />
+                <span asp-validation-for="Project.Dept_Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

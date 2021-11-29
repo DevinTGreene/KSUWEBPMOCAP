@@ -1,0 +1,72 @@
+﻿@page
+@model KSUWEBPMOCAP.Pages.Sponsors.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Sponsors</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Sponsor[0].Sponsor_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sponsor[0].Sponsor_Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sponsor[0].Sponsor_Org)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sponsor[0].Sponsor_Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sponsor[0].Sponsor_Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sponsor[0].Sponsor_Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sponsor[0].Sponsor_Website)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Sponsor) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sponsor_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sponsor_Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sponsor_Org)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sponsor_Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sponsor_Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sponsor_Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sponsor_Website)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Sponsor_ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Sponsor_ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Sponsor_ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,39 @@
+﻿@page
+@model KSUWEBPMOCAP.Pages.SponsorPortalModel
+@{
+    ViewData["Title"] = "SponsorPortal";
+}
+
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>SponsorPortal</title>
+    </head>
+    <body>
+        <h3>Sponsor Sign In</h3>
+        @Model.Msg
+        <form method="post" asp-page="sponsorportal">
+            <table>
+                <tr>
+                    <td>Net_ID</td>
+                    <td>
+                        <input asp-for="@Model.account.Sponsor_ID" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td>
+                        <input type="password" asp-for="@Model.account.Sponsor_Password" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>
+                        <input type="submit" value="Login" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+    </html>
+

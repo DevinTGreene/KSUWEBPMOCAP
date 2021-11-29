@@ -1,0 +1,60 @@
+﻿@page
+@model KSUWEBPMOCAP.Pages.Proposals.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Proposal</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Proposal[0].Sponsor_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Proposal[0].Sponsor_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Proposal[0].Project_Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Proposal[0].Project_Num)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Proposal[0].Dept_Name)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Proposal) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sponsor_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sponsor_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Project_Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Project_Num)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dept_Name)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Propasal_ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Propasal_ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Propasal_ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

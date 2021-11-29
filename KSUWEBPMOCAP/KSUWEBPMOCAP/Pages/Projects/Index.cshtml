@@ -1,0 +1,102 @@
+﻿@page
+@model KSUWEBPMOCAP.Pages.Projects.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Project[0].Project_Num)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Project[0].Proj_Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Project[0].Num_Teams_Sponsored)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Project[0].Project_Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Project[0].Proj_Sponsor_Benefit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Project[0].Proj_Student_Benefit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Project[0].Proj_hasNDA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Project[0].StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Project[0].EndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Project[0].Sponsor_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Project[0].Faculty_LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Project[0].Dept_Name)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Project) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Project_Num)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Proj_Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Num_Teams_Sponsored)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Project_Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Proj_Sponsor_Benefit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Proj_Student_Benefit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Proj_hasNDA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sponsor_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Faculty_LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dept_Name)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Project_ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Project_ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Project_ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

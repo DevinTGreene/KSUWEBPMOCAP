@@ -1,0 +1,41 @@
+﻿@page
+@model KSUWEBPMOCAP.Pages.FacultyPortalModel
+@{
+    ViewData["Title"] = "FacultyPortal";
+}
+
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>FacultyPortal</title>
+    </head>
+    <body>
+        <h3>Faculty Sign In</h3>
+        @Model.Msg
+        <form method="post" asp-page="facultyportal">
+            <table>
+                <tr>
+                    <td>Net_ID</td>
+                    <td>
+                        <input asp-for="@Model.account.Net_Id" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td>
+                        <input type="password" asp-for="@Model.account.Faculty_Password" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>
+                        <input type="submit" value="Login" />
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <h6>Only authorized personnel can register new users. Please contact an administrator to create new PMO account.</h6>
+        </form>
+    </body>
+    </html>
+
